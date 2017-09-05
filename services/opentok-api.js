@@ -4,7 +4,7 @@
 
 /** Config */
 //const { apiKey, apiSecret } = require('../config');
-// heroku env config
+// Heroku Config Vars
 const apiKey = process.env.API_KEY,
   apiSecret = process.env.API_SECRET;
 if (!apiKey || !apiSecret) {
