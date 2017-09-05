@@ -3,8 +3,14 @@
 /* eslint-env es6 */
 
 /** Config */
-const { apiKey, apiSecret } = require('../config');
-
+//const { apiKey, apiSecret } = require('../config');
+// heroku env config
+const apiKey = process.env.API_KEY,
+  apiSecret = process.env.API_SECRET;
+if (!apiKey || !apiSecret) {
+  console.log('You must specify API_KEY and API_SECRET environment variables');
+  process.exit(1);
+}
 /** Imports */
 const R = require('ramda');
 const Promise = require('bluebird');
